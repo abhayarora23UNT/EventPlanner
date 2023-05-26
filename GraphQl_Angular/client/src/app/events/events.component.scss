@@ -1,0 +1,106 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h3 {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+}
+
+.form-box {
+  width: 400px;
+}
+
+.submit-button {
+  width: 100px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #1976d2;
+  color: white;
+  cursor: pointer;
+}
+
+:disabled {
+  pointer-events: none; //better than cursor: default;
+  opacity: 0.65;
+}
+
+.clear-button {
+  width: 100px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #5c6267;
+  color: white;
+  cursor: pointer;
+}
+
+.event-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.event-container ul {
+  list-style: none;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.event-container ul li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+  width: 350px;
+}
+
+.event {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 10px;
+  max-width: 250px;
+}
+
+.event-name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.event-description {
+  max-width: 70%;
+  font-size: 13px;
+}
+
+.event-date {
+  max-width: 70%;
+  font-size: 12px;
+}
+
+.delete-btn {
+  background-color: #a10e04;
+  color: white;
+  padding: 5px;
+  cursor: pointer;
+  width: 60px;
+  font-size: 10px;
+  border-radius: 5px;
+
+}
+
+.no-records {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 20px;
+}

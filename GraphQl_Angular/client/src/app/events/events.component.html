@@ -1,0 +1,41 @@
+<div class="main">
+  <h3>Event List</h3>
+  <div *ngIf="error">
+    <p>Error: {{ error }}</p>
+  </div>
+
+  <form class="form form-box" [formGroup]="eventForm">
+    <input class="input" type="text" name="name" placeholder="Enter Event Name" formControlName="name" />
+    <br />
+    <input class="input" type="text" name="description" placeholder="Enter Event Description"
+      formControlName="description" />
+    <br />
+
+    <input class="input" type="date" name="date" placeholder="Enter Event Date" formControlName="eventDate" />
+    <br />
+
+    <div>
+      <button class="clear-button" title="Clear Form" (click)="clearForm()">Clear</button>
+      <button class="submit-button" title="Add Event" (click)="addEvent()" [disabled]="eventForm.invalid">Submit</button>
+    </div>
+
+  </form>
+
+  <div class="event-container" *ngIf="events.length>0">
+    <ul>
+      <li *ngFor="let event of events">
+        <div class="event">
+          <span class="event-name">{{ event.name }}</span>
+          <span class="event-description">{{ event.description }}</span>
+          <span class="event-date">{{ event.eventDate }}</span>
+        </div>
+        <button title="delete" class="delete-btn" (click)="deleteEvent(event.id)"> Delete</button>
+      </li>
+    </ul>
+  </div>
+  <div class="event-container" *ngIf="events.length==0">
+    <div class="event">
+      <span class="no-records">No Records Found</span> 
+    <div>
+  </div>
+</div>
