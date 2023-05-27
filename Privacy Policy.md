@@ -1,6 +1,8 @@
 Privacy Policy
 
-Last updated: 05/12/2023
+This application follows some official documentation of Graph QL , Apollo Angular and some sample Github Public Projects.
+
+Last updated: 05/26/2023
 
 This privacy policy explains how we collect, use, and share information about you when you use our public GitHub projects. Our privacy policy is designed to protect our intellectual property rights and prevent unauthorized copying of our code.
 
