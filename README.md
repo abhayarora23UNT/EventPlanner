@@ -36,6 +36,7 @@ This application demonstrates how to create event planner using Angular and Grap
 * npm init -y
 * npm i express graphql express-graphql cors 
 * node index.js   // To start graphQL Server
+* http://localhost:4000/playground
 
 #### For Client App
 

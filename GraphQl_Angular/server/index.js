@@ -1,15 +1,15 @@
 const express = require('express');
 const cors = require('cors');
-const { graphqlHTTP } = require('express-graphql');
+require('graphql-http');
+const { createHandler } = require('graphql-http/lib/use/express');
+const expressPlayground = require('graphql-playground-middleware-express').default;
 const {
   GraphQLObjectType,
   GraphQLString,
   GraphQLInt,
   GraphQLNonNull,
   GraphQLSchema,
-  GraphQLList,
-  GraphQLBoolean
-} = require('graphql')
+  GraphQLList } = require('graphql')
 
 
 const Events = [
@@ -33,7 +33,7 @@ const RootQueryType = new GraphQLObjectType({
   name: 'Query',
   description: 'Root Query',
   fields: () => ({
-    
+
     events: {
       type: new GraphQLList(EventType),
       description: 'List of All Default Events',
@@ -114,12 +114,7 @@ const schema = new GraphQLSchema({
 const app = express();
 
 app.use(cors());
+app.all('/graphql', createHandler({ schema }));
+app.get('/playground', expressPlayground({ endpoint: '/graphql' }));
 
-app.use('/graphql', graphqlHTTP({
-  schema: schema,
-  graphiql: true,
-}));
-
-app.listen(4000);
-
-console.log('Running a GraphQL API server at localhost:4000/graphql');
+app.listen(4000, () => console.log('Running a GraphQL API server at localhost:4000/graphql'));
